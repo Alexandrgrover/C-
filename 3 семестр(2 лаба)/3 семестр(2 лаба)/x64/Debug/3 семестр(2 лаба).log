@@ -1,0 +1,4 @@
+﻿  3 семестр(2 лаба).cpp
+C:\Users\Hemp Grover\source\repos\3 семестр(2 лаба)\3 семестр(2 лаба)\3 семестр(2 лаба).cpp(30,24): warning C4244: =: преобразование "unsigned __int64" в "double", возможна потеря данных
+C:\Users\Hemp Grover\source\repos\3 семестр(2 лаба)\3 семестр(2 лаба)\3 семестр(2 лаба).cpp(60,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  3 семестр(2 лаба).vcxproj -> C:\Users\Hemp Grover\source\repos\3 семестр(2 лаба)\x64\Debug\3 семестр(2 лаба).exe
