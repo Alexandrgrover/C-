@@ -15,9 +15,9 @@ public:
 
 	}
 
-	const char* what() const noexcept
+	string what()
 	{
-		return m_error.c_str();
+		return m_error;
 	}
 }; 
 
