@@ -1,6 +1,6 @@
 ﻿  3 сем(6 лаба).cpp
-C:\Users\Hemp Grover\source\repos\3 сем(6 лаба)\3 сем(6 лаба)\3 сем(6 лаба).cpp(351,1): warning C5043: "terminate": спецификация исключения не соответствует предыдущему объявлению
+C:\Users\Hemp Grover\source\repos\3 сем(6 лаба)\3 сем(6 лаба)\3 сем(6 лаба).cpp(345,1): warning C5043: "terminate": спецификация исключения не соответствует предыдущему объявлению
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_terminate.h(33): message : см. объявление "terminate"
-C:\Users\Hemp Grover\source\repos\3 сем(6 лаба)\3 сем(6 лаба)\3 сем(6 лаба).cpp(351,1): warning C4273: terminate: несовместимое связывание dll
+C:\Users\Hemp Grover\source\repos\3 сем(6 лаба)\3 сем(6 лаба)\3 сем(6 лаба).cpp(345,1): warning C4273: terminate: несовместимое связывание dll
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_terminate.h(33,48): message : см. предыдущее определение "terminate"
   3 сем(6 лаба).vcxproj -> C:\Users\Hemp Grover\source\repos\3 сем(6 лаба)\Debug\3 сем(6 лаба).exe

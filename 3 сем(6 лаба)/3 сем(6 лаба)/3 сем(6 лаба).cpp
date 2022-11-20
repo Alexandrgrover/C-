@@ -1,10 +1,9 @@
 ﻿#include <iostream>
-#include <exception>
 #include <string>
 
 using namespace std;
 
-class ListException : public exception
+class ListException
 {
 private:
 	string m_error;
