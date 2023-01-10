@@ -1,0 +1,6 @@
+id is 2, cost 200$ and calories 300 cal
+id is 3, cost 300$ and calories 400 cal
+id is 4, cost 400$ and calories 500 cal
+id is 5, cost 500$ and calories 600 cal
+id is 200, cost 200$ and calories 200 cal
+id is 150, cost 150$ and calories 150 cal
