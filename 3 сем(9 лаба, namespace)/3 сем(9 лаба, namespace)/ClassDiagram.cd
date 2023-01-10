@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="grover::Conductor" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAAQAAQQAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conductor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="grover::Locomotive" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAAAAAAAAAACAAAAAAQAAAAAAAAgAAAA=</HashCode>
+      <FileName>Locomotive.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="grover::Train" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAABAAAAAAAACAAAAAAAAAAQAAAAAAAAAAgA=</HashCode>
+      <FileName>Train.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="grover::Vehicle" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Vehicle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="grover::Wagons" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAAAAAAAAAABAAACAAAAQAAAAAA=</HashCode>
+      <FileName>Wagons.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
