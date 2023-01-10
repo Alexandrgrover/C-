@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include <vector>
 #include <time.h>
+#include <conio.h>
+#include <Windows.h>
 
 using namespace std;
 
@@ -17,9 +19,9 @@ public:
 
 	void add(T data)
 	{
-		for (int i = 0; i < ring.size(); i++)
+		for (auto iter = ring.begin(); iter < ring.end(); iter++)
 		{
-			if (ring.at(i) == data)
+			if (*iter == data)
 			{
 				throw exception("There is already such an element in the ring");
 			}
@@ -30,6 +32,11 @@ public:
 
 	void delElelem(T data)
 	{
+		if (ring.empty())
+		{
+			throw exception("List is empty!");
+		}
+
 		bool there = false;
 
 		for (auto iter = ring.begin(); iter != ring.end(); iter++)
@@ -38,6 +45,7 @@ public:
 			{
 				there = true;
 				ring.erase(iter);
+				cout << "Element was delete" << endl;
 				return;
 			}
 		}
@@ -50,6 +58,11 @@ public:
 
 	void find(T data)
 	{
+		if (ring.empty())
+		{
+			throw exception("List is empty!");
+		}
+
 		bool exist = false;
 
 		for (auto iter = ring.begin(); iter != ring.end(); iter++)
@@ -69,135 +82,120 @@ public:
 
 	void print()
 	{
+		if (ring.empty())
+		{
+			throw exception("List is empty!");
+		}
+
 		for (auto iter = ring.begin(); iter != ring.end(); iter++)
 		{
 			cout << *iter << " ";
 		}
 
-		cout << "\n";
+		cout << endl;
 	}
 };
+
+template<typename T>
+Ring<T> func(Ring<T> ring)
+{
+	while (1)
+	{
+		try
+		{
+			cout << "1|Add\n2|Delete\n3|Find\n4|Print\n5|Exit" << endl;
+
+			char get = _getch();
+
+			switch (get)
+			{
+			case '1':
+				system("cls");
+				cout << "Enter data: ";
+				T data;
+				cin >> data;
+				ring.add(data);
+				system("cls");
+				break;
+			case '2':
+				system("cls");
+				ring.print();
+				cout << "Enter data: ";
+				cin >> data;
+				ring.delElelem(data);
+				cout << "\nPress any key...";
+				_getch();
+				system("cls");
+				break;
+			case '3':
+				system("cls");
+				cout << "Enter data: ";
+				cin >> data;
+				ring.find(data);
+				cout << "\nPress any key...";
+				_getch();
+				system("cls");
+				break;
+			case '4':
+				system("cls");
+				ring.print();
+				cout << "\nPress any key...";
+				_getch();
+				system("cls");
+				break;
+			case '5':
+				system("cls");
+				return ring;
+			default:
+				break;
+			}
+		}
+		catch (exception error)
+		{
+			cout << error.what() << endl;
+			Sleep(1500);
+			system("cls");
+		}
+	}
+}
 
 int main()
 {
 	Ring<int> ringInt;
-	Ring<double> ringDoub;
+	Ring<double> ringDouble;
 	Ring<char> ringChar;
-	
-	cout << "Enter count elements of ring int: ";
-	int countInt;
-	cin >> countInt;
 
-	cout << "Enter count elements of ring double: ";
-	int countDoub;
-	cin >> countDoub;
+	cout.unsetf(ios::dec);
 
-	cout << "Enter count elements of ring char: ";
-	int countChar;
-	cin >> countChar;
-	system("cls");
-
-	try
+	cout.setf(ios::hex | ios::fixed | ios::showpos | ios::showbase);
+	while (1)
 	{
-		cout << "Enter " << countInt << " elements for ring int: ";
-		for (int i = 0; i < countInt; i++)
-		{
-			int tmp;
-			cin >> tmp;
-			ringInt.add(tmp);
-		}
+		cout << "Choose:\n1|Int\n2|Double\n3|Char\n4|Exit" << endl;
+		char get = _getch();
 
-		cout << "Enter " << countDoub << " elements for ring double: ";
-		for (int i = 0; i < countDoub; i++)
+		switch (get)
 		{
-			double tmp;
-			cin >> tmp;
-			ringDoub.add(tmp);
-		}
-
-		cout << "Enter " << countChar << " elements for ring char: ";
-		for (int i = 0; i < countChar; i++)
-		{
-			char tmp;
-			cin >> tmp;
-			ringChar.add(tmp);
+		case '1':
+			system("cls");
+			ringInt = func(ringInt);
+			system("cls");
+			break;
+		case '2':
+			system("cls");
+			ringDouble = func(ringDouble);
+			system("cls");
+			break;
+		case '3':
+			system("cls");
+			ringChar = func(ringChar);
+			system("cls");
+			break;
+		case '4':
+			system("cls");
+			return 0;
+		default:
+			cout << "Error value!" << endl;
+			break;
 		}
 	}
-	catch (exception error)
-	{
-		cout << error.what() << endl;
-	}
-
-	system("cls");
-	cout << "Ring of int: ";
-	ringInt.print();
-
-	cout << "Enter int element, which you will want to find: ";
-	int findInt;
-	cin >> findInt;
-	ringInt.find(findInt);
-
-	cout << "Enter int element, which you will want to delete: ";
-	int delInt;
-	cin >> delInt;
-	ringInt.delElelem(delInt);
-
-	cout << "Enter int element, which you will want to find: ";
-	cin >> findInt;
-	ringInt.find(findInt);
-
-	cout << "Ring of int: ";
-	ringInt.print();
-
-	for (int i = 0; i < 220000000; i++)
-	{
-
-	}
-	system("cls");
-
-	cout << "Ring of double: ";
-	ringDoub.print();
-
-	cout << "Enter double element, which you will want to find: ";
-	double findDoub;
-	cin >> findDoub;
-	ringDoub.find(findDoub);
-
-	cout << "Enter double element, which you will want to delete: ";
-	double delDoub;
-	cin >> delDoub;
-	ringDoub.delElelem(delDoub);
-
-	cout << "Enter double element, which you will want to find: ";
-	cin >> findDoub;
-	ringDoub.find(findDoub);
-
-	cout << "Ring of double: ";
-	ringDoub.print();
-
-	for (int i = 0; i < 220000000; i++)
-	{
-
-	}
-	system("cls");
-
-	cout << "Ring of char: ";
-	ringChar.print();
-
-	cout << "Enter char element, which you will want to find: ";
-	char findChar;
-	cin >> findChar;
-	ringChar.find(findChar);
-
-	cout << "Enter char element, which you will want to delete: ";
-	char delChar;
-	cin >> delChar;
-	ringChar.delElelem(delChar);
-
-	cout << "Enter char element, which you will want to find: ";
-	cin >> findChar;
-	ringChar.find(findChar);
-
-	cout << "Ring of char: ";
-	ringChar.print();
 }
